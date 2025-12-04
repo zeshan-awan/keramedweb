@@ -7,10 +7,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+  body { padding-top: 50px; } /* header ke neeche content chipke na */
+</style>
 <body class="font-sans text-gray-800">
 
 <!-- HEADER -->
-<header class="bg-[#192A7A] py-5">
+<header class="bg-[#192A7A] py-5 fixed top-0 left-0 w-full z-50 shadow-lg">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between">
 
@@ -19,27 +22,35 @@
         <img src="images/logoheader.png" class="w-50" alt="logo">
       </a>
 
-      <!-- Menu -->
+      <!-- Desktop Menu -->
       <nav class="hidden xl:flex space-x-10 text-lg">
-        <a href="#home" class="text-[#D7EFFF] hover:text-white font-medium" id="home1">Home</a>
-        <a href="#features" class="text-[#D7EFFF] hover:text-white font-medium" >Features</a>
-        <a href="#screens" class="text-[#D7EFFF] hover:text-white font-medium">Screen shots</a>
+        <a href="#home" class="text-[#D7EFFF] hover:text-white font-medium">Home</a>
+        <a href="#features" class="text-[#D7EFFF] hover:text-white font-medium">Features</a>
+        <a href="#screens" class="text-[#D7EFFF] hover:text-white font-medium">Screenshots</a>
       </nav>
 
-      <!-- Screenshot Button -->
+      <!-- Desktop Button -->
       <a href="#screen"
-         class="hidden xl:block bg-white text-[#0A1D50] px-8 py-3 rounded-full font-semibold text-[16px] shadow-lg">
+        class="hidden xl:block bg-white text-[#0A1D50] px-8 py-3 rounded-full font-semibold text-[16px] shadow-lg">
         SCREENSHOTS
       </a>
 
-      <!-- Mobile Menu Icon -->
-      <div class="xl:hidden text-white text-3xl cursor-pointer">
-        ☰
-      </div>
-
+      <!-- ☰ Mobile Menu Button -->
+      <div id="menuBtn" class="xl:hidden text-white text-3xl cursor-pointer">☰</div>
     </div>
   </div>
 </header>
+
+<!-- Sidebar -->
+<div id="sidebar"
+  class="fixed top-0 left-0 w-64 h-full bg-[#192A7A] text-white p-6 transform -translate-x-full transition-all duration-300 xl:hidden z-50">
+  <a href="#home" class="block py-3 border-b border-[#2E3C92]">Home</a>
+  <a href="#features" class="block py-3 border-b border-[#2E3C92]">Features</a>
+  <a href="#screens" class="block py-3 border-b border-[#2E3C92]">Screenshots</a>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black/40 hidden xl:hidden z-40"></div>
 
 
 
@@ -47,11 +58,21 @@
   <section id="home" class="relative pt-28 pb-20">
 
   <!-- Background Curve Image -->
- <div class="absolute inset-0 -z-10 overflow-hidden">
+<div class="absolute inset-0 -z-10 overflow-hidden">
   <img src="images/curvve.jpeg"
-       class="w-full h-full object-cover translate-x-64 md:translate-x-96
-" />
+       class="
+         w-[150%]       /* mobile pe choti aur subtle */
+         object-cover
+         translate-x-20  /* mobile: thoda right corner */
+         -translate-y-4  /* mobile: thoda upar */
+         md:w-[250%]     /* desktop: original large */
+         md:translate-x-32  /* desktop: thoda right */
+         md:-translate-y-8  /* desktop: thoda upar */
+       " />
 </div>
+
+
+
 
 
 
@@ -173,10 +194,10 @@
         <h2 class="text-3xl font-bold mb-4">Enhance Scheduling Efficiency</h2>
         <p class="mb-4 text-[#666666]">We understand the importance of efficient scheduling for healthcare providers and patients alike. That’s why we’re thrilled to introduce a customizable appointment management. With this feature, healthcare providers can now set their availability and manage appointment slots according to their preferences, enhancing scheduling efficiency and improving overall patient care. <br> Healthcare providers can easily set their availability based on their unique schedules and preferences. Whether it’s regular office hours, specific days off, or varying shift patterns,<b class="text-[#666666]"> KARAMeD</b> allows providers to customize their availability effortlessly.</p>
         <div class="flex space-x-4 mt-6">
-          <a href="#">
+          <a href="https://web.archive.org/web/20250806060756/https://apps.apple.com/us/app/karamed/id6483859022">
             <img src="images/apple-btn.png" class="h-12 mr-3 rounded" /> 
           </a>
-          <a  href="#">
+          <a  href="https://web.archive.org/web/20250806060756/https://play.google.com/store/apps/details?id=com.karamed">
             <img src="images/googleplay-btn.png" class="h-12 mr-3 rounded  " alt='image '  />
           </a>
         </div>
@@ -385,16 +406,16 @@
   <section>
     <div class="flex justify-center flex-col items-center gap-4">
        
-    <h2 class="text-[#190A32] text-[45px] font-bold ">Promotional Video</h2>
+    <h2 class="text-[#190A32] text-[45px] text-center font-bold ">Promotional Video</h2>
     <p>Click below to view promotional video</p>
     <img src="./images/play-btn.png" class="h-[142px] w-[142px]" alt="play-btn">
-    <h2  class="text-[#190A32] text-[45px] font-bold ">KARAMeD Screen Shots</h2>
+    <h2  class="text-[#190A32] text-[45px] font-bold text-center ">KARAMeD Screen Shots</h2>
     
     </div>
   </section>
 <section id="screens" class="py-20 bg-gray-50">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-12">KARAMeD Screenshots</h2>
+    <h2 class="text-3xl text-center font-bold mb-12">KARAMeD Screenshots</h2>
 
     <div class="carousel-container relative mx-auto w-[1150px] h-[520px] overflow-hidden">
       <div class="carousel-track flex items-center gap-10 transition-transform duration-300">
@@ -433,16 +454,16 @@
          KARAMED serves as an innovative online platform facilitating uniform communication and interaction between medical service providers and patients, surpassing geographical boundaries and time zones.
         </p>
         <div class="flex gap-6 mt-4">
-        <a href="" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
+        <a href="https://web.archive.org/web/20250806060756/https://www.facebook.com/people/CanIndigo-Solutions-Inc/61558178726117/"target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
          <i class="fa-brands fa-facebook-f" style="font-size:14px ; color:#00136B"></i>
         </a>
-        <a href="" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
+        <a href="https://web.archive.org/web/20250806060756/http://www.youtube.com/@Can.IndigoSolutionsInc-kh4lm" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
          <i class="fa-brands fa-youtube" style="font-size:14px ; color:#00136B"></i>
         </a>
-        <a href="" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
+        <a href="https://web.archive.org/web/20250806060756/https://www.instagram.com/can.indigo_solutions/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
          <i class="fa-brands fa-instagram" style="font-size:14px ; color:#00136B"></i>
         </a>
-        <a href="" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
+        <a href="https://web.archive.org/web/20250806060756/https://www.linkedin.com/company/can-indigo-solutions-inc/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition">
          <i class="fa-brands fa-linkedin" style="font-size:14px ; color:#00136B"></i>
         </a>
        </div>
