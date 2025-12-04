@@ -8,19 +8,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
-  body { padding-top: 50px; overflow-x: hidden;}
-   /* header ke neeche content chipke na */
+  body { padding-top: 70px; overflow-x: hidden;}
+  @media (max-width: 768px) {
+    body { padding-top: 60px; }
+  }
 </style>
 <body class="font-sans text-gray-800">
 
 <!-- HEADER -->
-<header class="bg-[#192A7A]  py-5 fixed top-0 left-0 w-full z-50 shadow-lg md:overflow-x-hidden">
+<header class="bg-[#192A7A] py-3 md:py-5 fixed top-0 left-0 w-full z-50 shadow-lg overflow-x-hidden">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between">
 
       <!-- Logo -->
-      <a href="index.html">
-        <img src="images/logoheader.png" class="w-36 md:w-50" alt="logo">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="images/logoheader.png" class="w-28 md:w-36 lg:w-50 h-auto" alt="logo">
       </a>
 
       <!-- Desktop Menu -->
@@ -37,7 +39,7 @@
       </a>
 
       <!-- ☰ Mobile Menu Button -->
-      <div id="menuBtn" class="xl:hidden text-white text-3xl cursor-pointer">☰</div>
+      <div id="menuBtn" class="xl:hidden text-white text-2xl md:text-3xl cursor-pointer flex-shrink-0 p-2">☰</div>
     </div>
   </div>
 </header>
